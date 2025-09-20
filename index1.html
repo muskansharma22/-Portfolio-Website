@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cafe Finder - Home</title>
+  <link rel="stylesheet" href="styles1.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>☕ Cafe Finder</h1>
+    <p class="subtitle">Find your perfect coffee spot</p>
+  </header>
+
+  <main class="container">
+    <!-- 🔍 Search and Filter -->
+    <section class="search-panel">
+      <input id="searchInput" type="text" placeholder="Search cafes by name or area..." />
+      <select id="filterArea">
+        <option value="">— All Areas —</option>
+        <option value="Downtown">Downtown</option>
+        <option value="Uptown">Uptown</option>
+        <option value="Riverside">Riverside</option>
+        <option value="University">University</option>
+      </select>
+      <button id="clearBtn">Clear</button>
+    </section>
+
+    <!-- ☕ Cafe Results -->
+    <section id="results" class="results">
+      <!-- Cafe cards will be injected here -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Made by Muskan Sharma — BCA Project</small>
+  </footer>
+
+  <script>
+    // Cafe Data
+    const cafes = [
+      { id: 1, name: "Brew & Bite", area: "Downtown", address: "1 MG Road", rating: 4.5 },
+      { id: 2, name: "Campus Cafe", area: "University", address: "Near Block C", rating: 4.1 },
+      { id: 3, name: "Riverside Roast", area: "Riverside", address: "River Walk 12", rating: 4.7 },
+      { id: 4, name: "Uptown Beans", area: "Uptown", address: "Skyline Tower", rating: 4.2 },
+      { id: 5, name: "Latte Lounge", area: "Downtown", address: "Market Street 8", rating: 4.0 },
+      { id: 6, name: "Study Sip", area: "University", address: "Library Lane", rating: 3.9 }
+    ];
+
+    const resultsEl = document.getElementById('results');
+    const searchInput = document.getElementById('searchInput');
+    const filterArea = document.getElementById('filterArea');
+    const clearBtn = document.getElementById('clearBtn');
+
+    // Render cafe list
+    function renderList(list) {
+      if (!list.length) {
+        resultsEl.innerHTML = '<p class="no-results">No cafes found. ☹️</p>';
+        return;
+      }
+      resultsEl.innerHTML = list.map(c => `
+        <article class="card animate">
+          <h3>${c.name}</h3>
+          <p class="meta">📍 ${c.area} • 🏠 ${c.address}</p>
+          <p class="rating">⭐ Rating: <strong>${c.rating}</strong></p>
+          <a href="cafe.html?id=${c.id}" class="details-btn">View Details</a>
+        </article>
+      `).join('');
+    }
+
+    // Apply search + filter
+    function applyFilters() {
+      const q = searchInput.value.trim().toLowerCase();
+      const area = filterArea.value;
+
+      const filtered = cafes.filter(c => {
+        const matchesQuery = q === '' || c.name.toLowerCase().includes(q) || c.area.toLowerCase().includes(q);
+        const matchesArea = area === '' || c.area === area;
+        return matchesQuery && matchesArea;
+      });
+
+      renderList(filtered);
+    }
+
+    // Events
+    searchInput.addEventListener('input', applyFilters);
+    filterArea.addEventListener('change', applyFilters);
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      filterArea.value = '';
+      applyFilters();
+    });
+
+    // Initial render
+    renderList(cafes);
+  </script>
+</body>
+</html>

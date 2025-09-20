@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muskan Sharma | Advanced Portfolio</title>
+
+    <link rel="icon" href="favicon.png" type="image/png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1>Muskan Sharma</h1>
+      <p class="role-text">Software Developer | Frontend Developer</p>
+      <nav id="navbar">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience & Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="btn-toggle-theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+
+    <section id="about" class="fade-in">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <div class="profile-wrapper">
+          <img
+            src="proffetional photo.jpg"
+            alt="Muskan Sharma"
+            class="profile-pic"
+          />
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/muskan-sharma-1060822b3/"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a href="https://github.com/muskansharma22" target="_blank"
+              >GitHub</a
+            >
+          </div>
+        </div>
+        <div class="about-text">
+          <p id="shortBio">
+            Hi, I'm Muskan Sharma. I'm a passionate software developer who loves
+            building websites. As a BCA student, I am focused on mastering Data
+            Structures and Algorithms and am skilled in building projects using
+            HTML, CSS, and JavaScript. I enjoy turning creative ideas into real,
+            working websites. I'm always looking for new challenges and am
+            excited to learn more. Feel free to contact me if you have a project
+            in mind!
+          </p>
+          <p id="fullBio" style="display: none">
+            I love building interactive web applications and exploring new
+            technologies. My goal is to create user-friendly and efficient
+            software solutions. I am also enthusiastic about learning AI
+            integration and modern frameworks like React.js and Node.js. I
+            believe in writing clean, scalable, and maintainable code that
+            solves real-world problems.
+          </p>
+          <button onclick="toggleBio()" class="btn-read-more">Read More</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="fade-in">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill-card">
+          <h3>Frontend Development</h3>
+          <ul>
+            <li>HTML5, CSS3, JavaScript</li>
+            <li>React.js, Bootstrap</li>
+          </ul>
+          <div class="skill-level">
+            <div class="skill-bar" style="--skill-width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Programming & DSA</h3>
+          <ul>
+            <li>C- programming , C++ , OOPS Concepts</li>
+            <li>Data Structures, Algorithms</li>
+          </ul>
+          <div class="skill-level">
+            <div class="skill-bar" style="--skill-width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Communication</li>
+            <li>Problem Solving, Debugging</li>
+          </ul>
+          <div class="skill-level">
+            <div class="skill-bar" style="--skill-width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Tools & Platforms</h3>
+          <ul>
+            <li>Git, GitHub</li>
+            <li>VS Code, Postman</li>
+          </ul>
+          <div class="skill-level">
+            <div class="skill-bar" style="--skill-width: 95%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3>Cafe Finder</h3>
+          <p>
+            Built a Cafe Finder web app that helps users discover nearby cafés
+            with menus, ratings, and locations.
+          </p>
+          <div class="project-links">
+            <a
+              href="https://github.com/muskansharma22/Cafe-finder-application"
+              target="_blank"
+              >GitHub</a
+            >
+            <a
+              href="http://127.0.0.1:3000/index1.html?serverWindowId=76a9e872-c9d1-4605-b8ab-0c11ef248022"
+              target="_blank"
+              >Live Demo</a
+            >
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>
+            Interactive personal portfolio website showcasing skills, projects,
+            and contact info.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/muskan/portfolio" target="_blank"
+              >GitHub</a
+            >
+            <a href="http://127.0.0.1:3000/index.html" target="_blank"
+              >Live Demo</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="fade-in">
+      <h2>Experience & Resume</h2>
+      <div class="experience-container">
+        <div class="experience-card">
+          <h3>Internship Experience</h3>
+          <p>
+            <strong>Business Develop intern</strong><br />
+            <em>invest4edu | 22 sept 2025 - Present</em>
+          </p>
+          <ul>
+            <li>
+              As a Business Development Intern, I gained hands-on experience in
+              client interaction, lead generation, and market research.
+            </li>
+            <li>
+              I also developed skills in communication, negotiation, and
+              building customer relationships.
+            </li>
+          </ul>
+          <p>
+            <strong>Frontend Developer Intern</strong><br />
+            <em>codsoft | 15 june 2025 - 17 july 2025</em>
+          </p>
+          <ul>
+            <li>
+              Developed and maintained user-facing features using modern
+              frameworks.
+            </li>
+            <li>
+              Collaborated with a team of developers to build and ship new
+              features.
+            </li>
+          </ul>
+        </div>
+        <div class="resume-card">
+          <h3>My Resume</h3>
+          <p>
+            For a detailed look at my skills and qualifications, download my
+            resume.
+          </p>
+          <a href="Resume (cv).pdf"  class="btn-read-more"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <h2>Contact Me</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📧</span>
+            <a href="mailto:muskansharma224412@gmail.com"
+              >muskansharma224412@gmail.com</a
+            >
+          </div>
+          <div class="contact-item">
+            <span>💼</span>
+            <a
+              href="https://www.linkedin.com/in/muskan-sharma-1060822b3/"
+              target="_blank"
+              >linkedin.com/in/muskan</a
+            >
+          </div>
+          <div class="contact-item">
+            <span>🐱</span>
+            <a href="https://github.com/muskansharma22" target="_blank"
+              >github.com/muskan</a
+            >
+          </div>
+        </div>
+        <div class="contact-form">
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit" class="btn-read-more">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="fade-in">
+      <p>&copy; 2025 Muskan Sharma. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

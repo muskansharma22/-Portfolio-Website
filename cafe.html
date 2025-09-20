@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cafe Finder - Cafe Details</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>☕ Cafe Finder</h1>
+    <p class="subtitle">Cafe Details</p>
+  </header>
+
+  <main class="container cafe-detail">
+    <a href="index.html" class="back-btn">← Back to Cafes</a>
+
+    <section class="cafe-card animate">
+      <h2 id="cafeName">Cafe Name</h2>
+      <p id="cafeArea"></p>
+      <p id="cafeAddress"></p>
+      <p id="cafeRating"></p>
+      <p class="desc">
+        Welcome to our cafe! We serve fresh coffee, snacks, and provide a cozy space for students and professionals alike.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Made by Muskan Sharma — BCA Project</small>
+  </footer>
+
+  <script>
+    // Cafe Data
+    const cafes = {
+      1: { name: "Brew & Bite", area: "Downtown", address: "1 MG Road", rating: 4.5 },
+      2: { name: "Campus Cafe", area: "University", address: "Near Block C", rating: 4.1 },
+      3: { name: "Riverside Roast", area: "Riverside", address: "River Walk 12", rating: 4.7 },
+      4: { name: "Uptown Beans", area: "Uptown", address: "Skyline Tower", rating: 4.2 },
+      5: { name: "Latte Lounge", area: "Downtown", address: "Market Street 8", rating: 4.0 },
+      6: { name: "Study Sip", area: "University", address: "Library Lane", rating: 3.9 }
+    };
+
+    // Get cafe id from URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const cafe = cafes[id];
+
+    // Populate details
+    if (cafe) {
+      document.getElementById("cafeName").textContent = cafe.name;
+      document.getElementById("cafeArea").textContent = "📍 Area: " + cafe.area;
+      document.getElementById("cafeAddress").textContent = "🏠 Address: " + cafe.address;
+      document.getElementById("cafeRating").textContent = "⭐ Rating: " + cafe.rating;
+    }
+  </script>
+</body>
+</html>
